@@ -6,7 +6,7 @@
 /*   By: yenyilma <yyenerkaan1@student.42.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 19:45:55 by yenyilma          #+#    #+#             */
-/*   Updated: 2024/12/13 03:08:33 by yenyilma         ###   ########.fr       */
+/*   Updated: 2024/12/13 07:41:45 by yenyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char	*remove_line(char *garbage)
 {
 	int		i;
 	int		j;
-	char	*new_garbage;
+	char	*n_garbage;
 
 	i = 0;
 	j = 0;
@@ -55,14 +55,14 @@ static char	*remove_line(char *garbage)
 	}
 	if (garbage[i] == '\n')
 		i++;
-	new_garbage = (char *)malloc(sizeof(char) * (ft_strlen_gnl(garbage) - i + 1));
-	if (!new_garbage)
+	n_garbage = (char *)malloc(sizeof(char) * (ft_strlen_gnl(garbage) - i + 1));
+	if (!n_garbage)
 		return (NULL);
 	while (garbage[i] != '\0')
-		new_garbage[j++] = garbage[i++];
-	new_garbage[j] = '\0';
+		n_garbage[j++] = garbage[i++];
+	n_garbage[j] = '\0';
 	free(garbage);
-	return (new_garbage);
+	return (n_garbage);
 }
 
 static char	*ft_get_line(char *garbage)
