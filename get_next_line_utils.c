@@ -6,13 +6,13 @@
 /*   By: yenyilma <yyenerkaan1@student.42.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 19:45:53 by yenyilma          #+#    #+#             */
-/*   Updated: 2024/10/28 00:41:20 by yenyilma         ###   ########.fr       */
+/*   Updated: 2024/12/13 03:08:00 by yenyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strchr(const char *s, int c)
+int	ft_strchr_gnl(const char *s, int c)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ int	ft_strchr(const char *s, int c)
 	return (0);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_gnl(const char *s)
 {
 	size_t	i;
 
@@ -40,21 +40,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	unsigned char	*ptr_dst;
-	unsigned char	*ptr_src;
-
-	ptr_dst = (unsigned char *)dst;
-	ptr_src = (unsigned char *)src;
-	if (!dst && !src)
-		return (NULL);
-	while (n--)
-		*ptr_dst++ = *ptr_src++;
-	return (dst);
-}
-
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;
@@ -65,7 +51,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		s1 = malloc(1 * sizeof(char));
 		*s1 = '\0';
 	}
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = malloc(sizeof(char) * (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
 	if (!str)
 		return (NULL);
 	i = -1;

@@ -6,7 +6,7 @@
 /*   By: yenyilma <yyenerkaan1@student.42.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 19:45:55 by yenyilma          #+#    #+#             */
-/*   Updated: 2024/10/30 16:01:39 by yenyilma         ###   ########.fr       */
+/*   Updated: 2024/12/13 03:08:33 by yenyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static char	*ft_read_file(char *garbage, int fd)
 	temp = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!temp)
 		return (NULL);
-	while (!ft_strchr(garbage, '\n') && i > 0)
+	while (!ft_strchr_gnl(garbage, '\n') && i > 0)
 	{
 		i = read(fd, temp, BUFFER_SIZE);
-		if (i == -1 || (i == 0 && !ft_strlen(garbage)))
+		if (i == -1 || (i == 0 && !ft_strlen_gnl(garbage)))
 		{
 			if (garbage)
 				free(garbage);
@@ -32,7 +32,7 @@ static char	*ft_read_file(char *garbage, int fd)
 			return (NULL);
 		}
 		temp[i] = '\0';
-		garbage = ft_strjoin(garbage, temp);
+		garbage = ft_strjoin_gnl(garbage, temp);
 	}
 	free(temp);
 	return (garbage);
@@ -55,7 +55,7 @@ static char	*remove_line(char *garbage)
 	}
 	if (garbage[i] == '\n')
 		i++;
-	new_garbage = (char *)malloc(sizeof(char) * (ft_strlen(garbage) - i + 1));
+	new_garbage = (char *)malloc(sizeof(char) * (ft_strlen_gnl(garbage) - i + 1));
 	if (!new_garbage)
 		return (NULL);
 	while (garbage[i] != '\0')
