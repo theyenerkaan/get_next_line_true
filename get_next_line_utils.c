@@ -6,7 +6,7 @@
 /*   By: yenyilma <yyenerkaan1@student.42.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 19:45:53 by yenyilma          #+#    #+#             */
-/*   Updated: 2025/01/20 17:04:22 by yenyilma         ###   ########.fr       */
+/*   Updated: 2025/01/26 11:30:05 by yenyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ size_t	ft_strlen_gnl(const char *s)
 		return (0);
 	while (s[i] != '\0')
 		i++;
-	
 	return (i);
 }
 
